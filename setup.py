@@ -26,6 +26,7 @@ setup(
     url='http://github.com/suvit/python-dikbm-adapter',
     zip_safe=False,
     packages=find_packages(exclude=['docs', 'examples', 'tests']),
-    install_requires=['suds'],
+    install_requires=['suds',
+                      'suds-passworddigest'],
     include_package_data=True,
 )
