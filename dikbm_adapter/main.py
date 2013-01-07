@@ -8,7 +8,9 @@ from settings import settings
 
 logger = logging.getLogger(__name__)
 
-if __name__ == '__main__':
+
+def main():
+
     logger.info('Starting DiKBM python client')
     try:
         client = DiKBMClient()
@@ -34,3 +36,6 @@ if __name__ == '__main__':
                 logger.info('lock %s released' % lock)
     finally:
         logger.info('Finished DiKMM python client')
+
+if __name__ == '__main__':
+    main()

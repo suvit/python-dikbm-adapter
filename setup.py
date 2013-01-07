@@ -30,4 +30,9 @@ setup(
                       'suds-passworddigest',
                       'lockfile'],
     include_package_data=True,
+    entry_points={
+            'console_scripts': [
+                'dikbm_main = dikbm_adapter.main:main',
+            ]
+        }
 )
