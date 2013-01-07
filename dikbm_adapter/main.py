@@ -21,11 +21,11 @@ def main():
         try:
             lock.acquire(0)
         except AlreadyLocked:
-            logger.info('lock %s already locked' % lock)
+            logger.info('lock %s already locked' % lock.unique_name)
         except LockFailed:
-            logger.info('lock %s cant be locked' % lock)
+            logger.error('lock %s cant be locked' % lock.unique_name)
         else:
-            logger.info('lock %s acquired' % lock)
+            logger.debug('lock %s acquired' % lock.unique_name)
             try:
                 client.proceed_in()
                 client.proceed_status()
@@ -33,7 +33,7 @@ def main():
                 logger.exception('Proceed Error')
             finally:
                 lock.release()
-                logger.info('lock %s released' % lock)
+                logger.debug('lock %s released' % lock.unique_name)
     finally:
         logger.info('Finished DiKBM python client')
 
