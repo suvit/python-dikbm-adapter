@@ -35,7 +35,7 @@ def main():
                 lock.release()
                 logger.info('lock %s released' % lock)
     finally:
-        logger.info('Finished DiKMM python client')
+        logger.info('Finished DiKBM python client')
 
 if __name__ == '__main__':
     main()

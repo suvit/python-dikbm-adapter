@@ -11,9 +11,9 @@ from dikbm_adapter import VERSION
 
 
 setup(
-    name='dikbm_adapter',
+    name='python-dikbm-adapter',
     version=VERSION,
-    description='DiKBM adapter to send request to web service',
+    description='DiKBM adapter to send request to RSA web service',
     long_description=file(
         os.path.join(
             os.path.dirname(__file__),
