@@ -39,7 +39,7 @@ class Settings:
         'http://172.19.3.9/dkbm-ws-1.0/services/historyService?wsdl'
     )
 
-    def init(self):
+    def __init__(self):
         for dir in (settings.in_dir, settings.out_dir,
                     settings.status_dir, settings.error_dir,
                     settings.log_dir):
@@ -49,5 +49,4 @@ class Settings:
                 pass
 
 settings = Settings()
-settings.init()
 logging.config.fileConfig('settings.ini')
