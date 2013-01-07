@@ -47,8 +47,10 @@ class DiKBMClient(object):
 
             if operation in ['kbm']:
                 response = self.request_kbm(file_path)
+                logger.info('catch response for %s' % filename)
                 self.response_kbm(filename, response)
 
+                logger.info('delete %s' % file_path)
                 os.remove(file_path)
 
     def proceed_in(self):
@@ -66,6 +68,9 @@ class DiKBMClient(object):
 
     def response_kbm(self, filename, response):
         output = base64.decodestring(response.data)
+
+        logger.info('save response for %s' % filename)
+
         f = open(os.path.join(settings.out_dir, filename), 'w')
         try:
             f.write(output)

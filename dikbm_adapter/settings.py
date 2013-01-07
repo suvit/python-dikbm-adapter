@@ -4,7 +4,6 @@ import logging
 import logging.config
 import os
 
-logging.config.fileConfig('settings.ini')
 logger = logging.getLogger(__name__)
 
 config = ConfigParser.ConfigParser()
@@ -25,6 +24,7 @@ class Settings:
     status_dir = config_get('DiKBM', 'statusDir', 'status')
     error_dir = config_get('DiKBM', 'errorDir', 'error')
     temp_dir = config_get('DiKBM', 'tempStatus', 'tempStatus')
+    log_dir =  config_get('DiKBM', 'logDir', 'log')
 
     kbmto_url = config_get('DiKBM',
                            'kbmToServiceUrl',
@@ -39,11 +39,15 @@ class Settings:
         'http://172.19.3.9/dkbm-ws-1.0/services/historyService?wsdl'
     )
 
-settings = Settings()
+    def init(self):
+        for dir in (settings.in_dir, settings.out_dir,
+                    settings.status_dir, settings.error_dir,
+                    settings.log_dir):
+            try:
+                os.mkdir(dir)
+            except (IOError, WindowsError):
+                pass
 
-for dir in (settings.in_dir, settings.out_dir,
-            settings.status_dir, settings.error_dir):
-    try:
-        os.mkdir(dir)
-    except (IOError, WindowsError):
-        pass
+settings = Settings()
+settings.init()
+logging.config.fileConfig('settings.ini')

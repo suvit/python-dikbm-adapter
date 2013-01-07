@@ -27,6 +27,7 @@ setup(
     zip_safe=False,
     packages=find_packages(exclude=['docs', 'examples', 'tests']),
     install_requires=['suds',
-                      'suds-passworddigest'],
+                      'suds-passworddigest',
+                      'lockfile'],
     include_package_data=True,
 )
