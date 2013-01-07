@@ -16,7 +16,7 @@ or
 Settings
 -----------------------
 
-Please, create settings.ini file in the same dir as dikbm_main script installed
+Please, create ``settings.ini`` file in the same dir as dikbm_main script installed
 
 Sample of ini file
 
@@ -39,9 +39,9 @@ other settings and theire default values
     PolicyLossServiceUrl = http://172.19.3.9/dkbm-ws-1.0/services/policyLossService?wsdl
     historyServiceUrl = http://172.19.3.9/dkbm-ws-1.0/services/historyService?wsdl
 
-this this ini file may be placed logging settings
+in the same ini file may be placed logging settings
 
-to run use ``virtualenv/bin/dikbm_main`` or ``virtualenv/bin/dikbm_main.exe``
+to run use ``virtualenv/bin/dikbm_main`` or ``virtualenv/Scripts/dikbm_main.exe``
 
 
 
