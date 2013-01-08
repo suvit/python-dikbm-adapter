@@ -10,7 +10,6 @@ logger = logging.getLogger(__name__)
 
 
 def main():
-
     logger.info('Starting DiKBM python client')
     try:
         client = DiKBMClient()

@@ -9,11 +9,13 @@ logger = logging.getLogger(__name__)
 config = ConfigParser.ConfigParser()
 config.read('settings.ini')
 
+
 def config_get(config=config, *args):
     try:
         config.get('DiKBM', *args[:-1])
     except:
         return args[-1]
+
 
 class Settings:
     username = config.get('DiKBM', 'username')

@@ -13,6 +13,7 @@ from settings import settings
 
 logger = logging.getLogger(__name__)
 
+
 class DiKBMClient(object):
     def __init__(self):
         self.kbm_client = Client(settings.kbmto_url)
