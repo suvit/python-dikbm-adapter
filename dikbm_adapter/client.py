@@ -52,6 +52,10 @@ class DiKBMClient(object):
 
                 logger.info('delete %s' % file_path)
                 os.remove(file_path)
+            else:
+                logger.error('unknown operation %s for %s' % (operation,
+                                                              filename))
+                self.proceed_error(file_path)
 
     def proceed_in(self):
         self.proceed_dir(settings.in_dir)
