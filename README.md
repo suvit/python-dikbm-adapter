@@ -1,7 +1,7 @@
 python-dikbm-adapter
 =========================
 
-[Русская документация](python-dikbm-adapter/README-ru.md)
+[Русская документация](python-dikbm-adapter/blob/master/README-ru.md)
 
 
 Installation

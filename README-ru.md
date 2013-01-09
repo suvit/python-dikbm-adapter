@@ -5,7 +5,7 @@ python-dikbm-adapter
 Установка
 ----------------
 
-Установка простая
+Процесс установки очень простой
 
     easy_install python-dikbm-adapter
 
