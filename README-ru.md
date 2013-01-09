@@ -1,36 +1,37 @@
 python-dikbm-adapter
 =========================
 
-[Русская документация](README-ru.md)
 
-
-Installation
+Установка
 ----------------
 
-installation is simple
+Установка простая
 
     easy_install python-dikbm-adapter
 
-or
+или
 
     pip install python-dikbm-adapter
 
-or
+или
 
     pip install git+https://github.com/suvit/python-dikbm-adapter
 
-Settings
+
+Настройки
 -----------------------
 
-Please, create ``settings.ini`` file in the same dir as dikbm_main script installed
+Пожалуйста, создайте ``settings.ini`` файл в той же папке где и был установлен скрипт dikbm_main
 
-Sample of ini file
+Или можете создать другой исполняемый скрипт, который вызывает dikbm_main, тогда файл с настройками надо положить рядом
+
+Пример минимального файла настроек
 
     [DiKBM]
     username = my_secret_username
     password = my_secret_password
 
-other settings and their default values
+Другие настройки(и их значения по умолчанию)
 
     [DiKBM]
 
@@ -45,9 +46,9 @@ other settings and their default values
     PolicyLossServiceUrl = http://172.19.3.9/dkbm-ws-1.0/services/policyLossService?wsdl
     historyServiceUrl = http://172.19.3.9/dkbm-ws-1.0/services/historyService?wsdl
 
-in the same ini file may be placed logging settings
+Так же в этом же файле настроек можно положить настроики для системы логирования
 
-Example of logging settings
+Пример настроек для логирования
 
     [loggers]
     keys=root, suds
@@ -92,6 +93,7 @@ Example of logging settings
     [formatter_verbose]
     format = %(asctime)s - %(levelname)s - %(name)s - %(module)s - %(process)d - %(thread)d - %(message)s
 
-to run use ``virtualenv/bin/dikbm_main`` or ``virtualenv/Scripts/dikbm_main.exe``
+Для запуска просто запустить скрипт.
+``virtualenv/bin/dikbm_main`` или ``virtualenv/Scripts/dikbm_main.exe``
 
-you may add ``dikbm_main`` script to cron job or windows task
+Вы так же можете добавить запуск скрипта в cron-задачу или windows-задание
