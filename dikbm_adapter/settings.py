@@ -42,9 +42,10 @@ class Settings:
     )
 
     def __init__(self):
-        for dir in (settings.in_dir, settings.out_dir,
-                    settings.status_dir, settings.error_dir,
-                    settings.log_dir):
+        for dir in (self.in_dir, self.out_dir,
+                    self.error_dir,
+                    #self.status_dir, self.temp_dir
+                    self.log_dir):
             try:
                 os.mkdir(dir)
             except (IOError, WindowsError):
