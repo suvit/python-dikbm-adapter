@@ -10,10 +10,10 @@ config = ConfigParser.ConfigParser()
 config.read('settings.ini')
 
 
-def config_get(config=config, *args):
+def config_get(*args):
     try:
-        config.get('DiKBM', *args[:-1])
-    except:
+        return config.get(*args[:-1])
+    except ConfigParser.Error:
         return args[-1]
 
 
