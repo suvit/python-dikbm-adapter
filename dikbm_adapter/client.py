@@ -21,8 +21,14 @@ class DiKBMClient(object):
         security = Security()
         token = UsernameDigestToken(settings.username,
                                     settings.password)
+        self.token = token
         security.tokens.append(token)
         self.kbm_client.set_options(wsse=security)
+
+    def reset_token(self):
+        logger.info('wsse token reseting')
+        self.token.nonce = None
+        self.token.created = None
 
     def proceed_dir(self, dirname):
         for filename in os.listdir(dirname):
@@ -53,10 +59,13 @@ class DiKBMClient(object):
 
                 logger.info('delete %s' % file_path)
                 os.remove(file_path)
+
+                self.reset_token()
             else:
                 logger.error('unknown operation %s for %s' % (operation,
                                                               filename))
                 self.proceed_error(file_path)
+
 
     def proceed_in(self):
         self.proceed_dir(settings.in_dir)
